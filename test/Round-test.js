@@ -22,17 +22,17 @@ describe('Round', function() {
 
     round = new Round(deck);
   });
-  it.skip('should be a function', function () {
+  it('should be a function', function () {
     expect(Round).to.be.a('function');
   });
-  it.skip('should be an instance of Round', function() {
+  it('should be an instance of Round', function() {
     expect(round).to.be.an.instanceOf(Round);
   });
-  it.skip('should be able to store the current Deck at play', function() {
+  it('should be able to store the current Deck at play', function() {
     expect(round.deck).to.be.an('object');
-    expect(round.deck.cards)to.be.an('array');
+    expect(round.deck.cards).to.be.an('array');
   });
-  it.skip('should be able to return the first card in the deck as the current card at play', function() {
+  it('should be able to return the first card in the deck as the current card at play', function() {
     expect(round.returnCurrentCard()).to.be.an('object');
     expect(round.returnCurrentCard()).to.deep.equal({
       "id": 1,
@@ -41,8 +41,8 @@ describe('Round', function() {
       "correctAnswer": "object"
     });
   });
-  it.skip('should create a new instance of Turn when a guess is made', function() {
-    round.takeTurn('object');
+  it('should create a new instance of Turn when a guess is made', function() {
+    let turn = round.takeTurn('object');
 
     expect(turn).to.be.an.instanceOf(Turn);
     expect(turn.guess).to.equal('object');
