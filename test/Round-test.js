@@ -43,7 +43,7 @@ describe('Round', function() {
   });
   it.skip('should create a new instance of Turn when a guess is made', function() {
     round.takeTurn('object');
-    
+
     expect(turn).to.be.an.instanceOf(Turn);
     expect(turn.guess).to.equal('object');
     expect(turn.card).to.be.an('object');
@@ -55,5 +55,27 @@ describe('Round', function() {
 
     expect(round.turns).to.equal(1);
   });
-  it.skip('should ')
+  it.skip('should move the next card in the Deck to be the current card when a guess is made', function() {
+    round.takeTurn('object');
+
+    expect(round.returnCurrentCard()).to.deep.equal({
+      "id": 2,
+      "question": "What is a comma-separated list of related values?",
+      "answers": ["array", "object", "function"],
+      "correctAnswer": "array"
+    });
+  });
+  it.skip('should evaluate guess and return feedback', function(){
+    const round1 = round.takeTurn('object');
+    const round2 = round.takeTurn('function');
+
+    expect(round1).to.equal('correct!');
+    expect(round2).to.equal('incorrect!');
+  });
+  it.skip('should be able to store incorrect guesses by card ID', function() {
+    round.takeTurn('array');
+
+    expect(round.incorrectGuesses).to.be.an('array');
+    expect(round.incorrectGuesses).to.deep.equal([1]);
+  });
 });
