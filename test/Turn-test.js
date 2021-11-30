@@ -57,5 +57,12 @@ describe('Turn', function() {
     });
   });
 
-  
+  it.skip('should be able to indicate if the users guess matches the correct answer', function() {
+    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    const turn = new Turn('object', card);
+
+    const guessOutcome = turn.evaluateGuess();
+
+    expect(guessOutcome).to.be.true;
+  });
 })
