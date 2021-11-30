@@ -24,4 +24,8 @@ describe('Round', function() {
   it.skip('should be an instance of Round', function() {
     expect(round).to.be.an.instanceOf(Round);
   });
+  it.skip('should be able to store the current Deck at play', function() {
+    expect(round.deck).to.be.an('object');
+    expect(round.deck.cards)to.be.an('array');
+  });
 })
