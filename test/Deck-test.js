@@ -26,7 +26,7 @@ describe('Deck', function() {
     expect(deck.cards).to.be.an('array');
     expect(deck.cards.length).to.equal(3);
   });
-  it.skip('should know how many cards are in the Deck', function() {
+  it('should know how many cards are in the Deck', function() {
     expect(deck.countCards()).to.equal(3);
   });
 });
