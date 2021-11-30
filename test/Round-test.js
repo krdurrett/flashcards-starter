@@ -2,10 +2,14 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const Round = require('../src/Round');
+const Turn = require('../src/Turn');
+const Card = require('../src/Card');
+const Deck = require('../src/Deck');
 
 describe('Round', function() {
   let round;
   let deck;
+  let turn;
   let card1;
   let card2;
   let card3;
@@ -28,4 +32,28 @@ describe('Round', function() {
     expect(round.deck).to.be.an('object');
     expect(round.deck.cards)to.be.an('array');
   });
-})
+  it.skip('should be able to return the first card in the deck as the current card at play', function() {
+    expect(round.returnCurrentCard()).to.be.an('object');
+    expect(round.returnCurrentCard()).to.deep.equal({
+      "id": 1,
+      "question": "What allows you to define a set of related information using key-value pairs?",
+      "answers": ["object", "array", "function"],
+      "correctAnswer": "object"
+    });
+  });
+  it.skip('should create a new instance of Turn when a guess is made', function() {
+    round.takeTurn('object');
+    
+    expect(turn).to.be.an.instanceOf(Turn);
+    expect(turn.guess).to.equal('object');
+    expect(turn.card).to.be.an('object');
+  })
+  it.skip('should be able to track the number of turns', function() {
+    expect(round.turns).to.equal(0);
+
+    round.takeTurn('object');
+
+    expect(round.turns).to.equal(1);
+  });
+  it.skip('should ')
+});
