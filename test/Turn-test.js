@@ -57,7 +57,7 @@ describe('Turn', function() {
     });
   });
 
-  it.skip('should be able to indicate if the users guess matches the correct answer', function() {
+  it.skip('should be able to track if the users guess matches the correct answer', function() {
     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const turn = new Turn('object', card);
 
@@ -65,4 +65,16 @@ describe('Turn', function() {
 
     expect(guessOutcome).to.be.true;
   });
-})
+
+  it.skip('should give feedback on whether or not the users guess is correct', function() {
+    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    const turn1 = new Turn('array', card);
+    const turn2 = new Turn('object', card);
+
+    const feedbackTurn1 = turn1.giveFeedback();
+    const feedbackTurn2 = turn2.giveFeedback();
+
+    expect(feedbackTurn1).to.equal('incorrect!');
+    expect(feedbackTurn2).to.equal('correct!');
+  });
+});
