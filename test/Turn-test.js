@@ -41,5 +41,21 @@ describe('Turn', function() {
     const userGuess = turn.returnGuess();
 
     expect(userGuess).to.equal('object');
-  })
+  });
+
+  it.skip('should be able to return the current card at play', function() {
+    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    const turn = new Turn('object', card);
+
+    const currentCard = turn.returnCard();
+
+    expect(currentCard).to.equal({
+      "id": 1,
+      "question": "What allows you to define a set of related information using key-value pairs?",
+      "answers": ["object", "array", "function"],
+      "correctAnswer": "object"
+    });
+  });
+
+  
 })
