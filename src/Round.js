@@ -5,16 +5,17 @@ class Round {
     this.deck = deck;
     this.turns = 0;
     this.incorrectGuesses = [];
+    this.currentTurn;
   }
   returnCurrentCard() {
     return this.deck.cards[0];
   }
   takeTurn(guess) {
     let currentCard = this.returnCurrentCard();
-    let turn = new Turn(guess, currentCard);
+    this.currentTurn = new Turn(guess, currentCard);
     this.turns += 1;
     this.deck.cards.shift();
-    if (turn.evaluateGuess()) {
+    if (this.currentTurn.evaluateGuess()) {
       return 'correct!';
     } else {
       this.incorrectGuesses.push(currentCard.id);
