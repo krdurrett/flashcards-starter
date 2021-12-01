@@ -16,6 +16,8 @@ class Game {
     let deck = new Deck(cardArray);
     let round = new Round(deck);
     this.currentRound = round;
+    this.printMessage(deck, round);
+    this.printQuestion(round);
   }
   printMessage(deck, round) {
     console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
