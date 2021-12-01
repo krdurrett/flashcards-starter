@@ -9,23 +9,23 @@ class Game {
   constructor() {
     this.currentRound = {};
   }
-  start(){
+  start() {
     let cardArray = prototypeQuestions.map(card =>
-      new Card (card.id, card.question, card.answers, card.correctAnswer)
+      new Card(card.id, card.question, card.answers, card.correctAnswer)
     );
     let deck = new Deck(cardArray);
     let round = new Round(deck);
     this.currentRound = round;
-    this.printMessage(deck, round);
+    this.printMessage(deck);
     this.printQuestion(round);
   }
-  printMessage(deck, round) {
+  printMessage(deck) {
     console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
------------------------------------------------------------------------`)
+-----------------------------------------------------------------------`);
   }
 
   printQuestion(round) {
-      util.main(round);
+    util.main(round);
   }
 }
 
