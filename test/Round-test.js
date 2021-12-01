@@ -40,7 +40,7 @@ describe('Round', function () {
       correctAnswer: 'object',
     });
   });
-  it.only('should create a new instance of Turn when a guess is made', function() {
+  it('should create a new instance of Turn when a guess is made', function() {
     round.takeTurn('object');
 
     expect(round.currentTurn).to.be.an.instanceOf(Turn);
@@ -73,7 +73,6 @@ describe('Round', function () {
   });
   it('should be able to store incorrect guesses by card ID', function () {
     round.takeTurn('array');
-
     expect(round.incorrectGuesses).to.be.an('array');
     expect(round.incorrectGuesses).to.deep.equal([1]);
   });
