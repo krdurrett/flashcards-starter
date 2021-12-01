@@ -4,6 +4,7 @@ const expect = chai.expect;
 const Round = require('../src/Round');
 const Card = require('../src/Card');
 const Deck = require('../src/Deck');
+const Turn = require('../src/Turn');
 
 describe('Round', function () {
   let round;
@@ -39,13 +40,13 @@ describe('Round', function () {
       correctAnswer: 'object',
     });
   });
-  // it('should create a new instance of Turn when a guess is made', function() {
-  //   let turn = round.takeTurn('object');
-  //
-  //   expect(turn).to.be.an.instanceOf(Turn);
-  //   expect(turn.guess).to.equal('object');
-  //   expect(turn.card).to.be.an('object');
-  // });
+  it.only('should create a new instance of Turn when a guess is made', function() {
+    round.takeTurn('object');
+
+    expect(round.currentTurn).to.be.an.instanceOf(Turn);
+    expect(round.currentTurn.guess).to.equal('object');
+    expect(round.currentTurn.card).to.be.an.instanceOf(Card);
+  });
   it('should be able to track the number of turns', function () {
     expect(round.turns).to.equal(0);
 
