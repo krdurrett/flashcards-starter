@@ -83,13 +83,13 @@ describe('Round', function() {
     round.takeTurn('function');
     round.takeTurn('mutator method');
 
-    expect(round.calculatePercentCorrect).to.equal(67);
+    expect(round.calculatePercentCorrect()).to.equal(67);
   });
-  it.skip('should be able to end the round and show the percentage of correct guesses', function() {
+  it('should be able to end the round and show the percentage of correct guesses', function() {
     round.takeTurn('object');
     round.takeTurn('function');
     round.takeTurn('mutator method');
 
-    expect(round.endRound).to.equal('** Round over! ** You answered 67% of the questions correctly!')
+    expect(round.endRound()).to.equal('** Round over! ** You answered 67% of the questions correctly!')
   });
 });
