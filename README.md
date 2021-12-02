@@ -34,9 +34,9 @@
 
 ![initialize game view](https://media.giphy.com/media/6ptMxoVebR1KiYKd0F/giphy.gif)
 
-## Classic Game Play:
+## Playing the game:
 
-![Classic play view](https://media.giphy.com/media/70sWeQUw8tts5nK5rq/giphy.gif)
+![playing the game](https://media.giphy.com/media/BVJH1jaav81D99vCbm/giphy.gif)
 
 
 ## Future Additions
