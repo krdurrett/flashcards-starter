@@ -30,9 +30,9 @@
   
    You will be prompted for each question, have the opportunity to select an answer, and will be given feedback. You will be able to play through the entire deck    of cards.
   
-## Main Game Choice View:
+## Initializing game:
 
-![Game choice view](https://media.giphy.com/media/BdXk4vi53eU6IE2kl8/giphy.gif)
+![initialize game view](https://media.giphy.com/media/6ptMxoVebR1KiYKd0F/giphy.gif)
 
 ## Classic Game Play:
 
